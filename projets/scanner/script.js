@@ -3,10 +3,15 @@ const scanResult = document.querySelector("#scan-result");
 const backButton = document.querySelector("#back-button");
 const reader = new Html5Qrcode("reader");
 
+// URL spéciale (celle du QR code secret)
+const secretPageUrl = "http://localhost:5500/projets/scanner/secret-page";
+// Rick Roll YouTube officiel
+const rickRollUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
 backButton.addEventListener("click", resetScanner);
 
 function resetScanner() {
-  body.classList.remove(["scanned"]);
+  body.classList.remove("scanned");
   scanResult.textContent = "";
   reader.resume();
 }
@@ -16,16 +21,22 @@ function onScanSuccess(decodedText, decodedResult) {
   scanResult.textContent = decodedText;
   body.classList.add("scanned");
   reader.pause();
+
+  // Redirection selon le contenu du QR code
+  if (decodedText === secretPageUrl) {
+    window.location.href = secretPageUrl;
+  } else {
+    window.location.href = rickRollUrl;
+  }
 }
 
 function startCamera(cameraId) {
-  if (cameraId === "") return;
+  if (!cameraId) return;
 
   if (reader.getState() === Html5QrcodeScannerState.SCANNING) {
     reader.stop();
   }
 
-  // Remember in localstorage to autostart next time
   localStorage.setItem("cameraId", cameraId);
 
   reader
@@ -37,18 +48,12 @@ function startCamera(cameraId) {
       onScanSuccess
     )
     .catch((err) => {
-      // Start failed, handle it.
       console.error("Error starting camera: ", err);
     });
 }
 
-// This method will trigger user permissions
 Html5Qrcode.getCameras()
   .then((devices) => {
-    /**
-     * devices would be an array of objects of type:
-     * { id: "id", label: "label" }
-     */
     if (devices && devices.length) {
       const cameraSelect = document.querySelector("#camera-select");
       const defaultOption = document.createElement("option");
@@ -63,7 +68,6 @@ Html5Qrcode.getCameras()
         cameraSelect.appendChild(option);
       });
 
-      // Set the default camera if available
       const savedCameraId = localStorage.getItem("cameraId");
       if (savedCameraId) {
         cameraSelect.value = savedCameraId;
@@ -72,7 +76,6 @@ Html5Qrcode.getCameras()
 
       cameraSelect.addEventListener("change", (event) => {
         const selectedCameraId = event.target.value;
-
         startCamera(selectedCameraId);
       });
     } else {
@@ -80,6 +83,5 @@ Html5Qrcode.getCameras()
     }
   })
   .catch((err) => {
-    // handle err
     console.error("Error getting cameras: ", err);
   });

@@ -96,3 +96,13 @@ select:empty {
   padding-right: 10px;
   margin-bottom: 90px;
 }
+
+#secret-link {
+  margin-top: -50px;
+  margin-right: 1000px;
+}
+
+a {
+  color: #0b0623;
+  text-decoration: none;
+}

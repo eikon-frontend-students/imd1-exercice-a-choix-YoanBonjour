@@ -1,0 +1,51 @@
+body {
+  color: #ffaee3;
+  background: #0b0623;
+  height: 100vh;
+  font-family: "IBM Plex Mono";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.background-text-1 {
+  z-index: -1;
+  text-align: center;
+  font-family: "IBM Plex Mono";
+  font-size: 600px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  opacity: 0.37;
+  background: linear-gradient(0deg, #0b0623 10.59%, #ffaee3 96.51%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+
+}
+
+.background-text-2 {
+  z-index: -1;
+  text-align: center;
+  font-family: "IBM Plex Mono";
+  font-size: 600px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  opacity: 0.37;
+  background: linear-gradient(180deg, #0b0623 14.64%, #ffaee3 103.94%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+
+#background {
+    margin-top: 00px;
+}
+
+.text {
+  position: absolute;
+  z-index: 1;
+}
