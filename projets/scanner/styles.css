@@ -7,7 +7,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #ffaee3;
+  background: #0b0623;
 }
 
 main {
@@ -16,14 +17,16 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
+  margin-top: 100px;
 }
 
 .video-scanner {
   width: 90vw;
   max-width: 600px;
-  border: 4px solid #333;
+  border: 3px solid #ffaee3;
   border-radius: 0.5rem;
   overflow: hidden;
+  margin-top: 300px;
 }
 
 .result-screen {
@@ -47,4 +50,36 @@ main {
 
 select:empty {
   display: none;
+}
+
+#text-background {
+  position: absolute;
+  font-family: "IBM Plex Mono";
+  font-size: 600px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  opacity: 0.37;
+  background: linear-gradient(73deg, #0b0623 12.65%, #ffaee3 91.13%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+  margin-bottom: 300px;
+}
+
+#text {
+  position: absolute;
+  color: #ffaee3;
+  text-align: center;
+  font-family: "IBM Plex Mono";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 573px;s
+  height: 202px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -270px;
 }
