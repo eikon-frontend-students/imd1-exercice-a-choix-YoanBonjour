@@ -17,16 +17,17 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
-  margin-top: 100px;
+  margin-top: -70px;
 }
 
 .video-scanner {
   width: 90vw;
   max-width: 600px;
-  border: 3px solid #ffaee3;
   border-radius: 0.5rem;
   overflow: hidden;
-  margin-top: 300px;
+  margin-top: 450px;
+  filter: hue-rotate(250deg);
+  border: 3px solid #fff8ae;
 }
 
 .result-screen {
@@ -81,5 +82,17 @@ select:empty {
   height: 202px;
   flex-direction: column;
   justify-content: center;
-  margin-top: -270px;
+  margin-top: -400px;
+}
+
+#camera-select {
+  margin-top: 20px;
+  background-color: #0b0623;
+  border: 3px solid #ffaee3;
+  color: #ffaee3;
+  padding: 6px;
+  border-radius: 30px;
+  font-family: "IBM Plex Mono";
+  padding-right: 10px;
+  margin-bottom: 90px;
 }
