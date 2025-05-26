@@ -4,7 +4,7 @@ const backButton = document.querySelector("#back-button");
 const reader = new Html5Qrcode("reader");
 
 // URL spéciale (celle du QR code secret)
-const secretPageUrl = "http://localhost:5500/projets/scanner/secret-page";
+const secretPageUrl = "http://localhost:5500/projets/scanner/virus";
 // Rick Roll YouTube officiel
 const rickRollUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 

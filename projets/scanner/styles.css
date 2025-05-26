@@ -56,12 +56,12 @@ select:empty {
 #text-background {
   position: absolute;
   font-family: "IBM Plex Mono";
-  font-size: 600px;
+  font-size: 28vw;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   opacity: 0.37;
-  background: linear-gradient(73deg, #0b0623 12.65%, #ffaee3 91.13%);
+  background: linear-gradient(73deg, #0b0623 12.65%, #ffaee3 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -74,11 +74,11 @@ select:empty {
   color: #ffaee3;
   text-align: center;
   font-family: "IBM Plex Mono";
-  font-size: 24px;
+  font-size: 1.5vw;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  width: 573px;s
+  width: 573px;
   height: 202px;
   flex-direction: column;
   justify-content: center;
@@ -105,4 +105,21 @@ select:empty {
 a {
   color: #0b0623;
   text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  #text {
+    font-size: 4vw;
+    width: 50vw;
+  }
+  #text-background {
+    font-size: 40vw;
+  }
+}
+
+@media (max-width: 900px) {
+  #text {
+    font-size: 2vw;
+    width: 60vw;
+  }
 }
